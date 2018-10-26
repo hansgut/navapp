@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "910750708320",
+    "firebase_url": "https://navapp-57001.firebaseio.com",
+    "project_id": "navapp-57001",
+    "storage_bucket": "navapp-57001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910750708320:android:d653882496082e32",
+        "android_client_info": {
+          "package_name": "com.mapbox.services.android.navigation.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910750708320-bqo3mc2tumjvcfniv278673aolsgejpr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mapbox.services.android.navigation.testapp",
+            "certificate_hash": "6343ff5e424c1947bcea785df07c210b76ac27c5"
+          }
+        },
+        {
+          "client_id": "910750708320-t4usju9mvh3fg11lad8p0irdahtch6k5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "910750708320-t4usju9mvh3fg11lad8p0irdahtch6k5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOT_zIj6h58vBM5feR1hBInOsTDT1Tu00"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910750708320-t4usju9mvh3fg11lad8p0irdahtch6k5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

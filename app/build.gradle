@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion androidVersions.compileSdkVersion
+    buildToolsVersion androidVersions.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.mapbox.services.android.navigation.testapp"
+        minSdkVersion 16
+        targetSdkVersion androidVersions.targetSdkVersion
+        versionCode 1
+        versionName "0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled = false
+        }
+        release {
+            minifyEnabled true
+        }
+    }
+
+    dexOptions {
+        maxProcessCount 8
+        javaMaxHeapSize "2g"
+        preDexLibraries true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+sonarqube {
+    skipProject = true
+}
+
+dependencies {
+    // Mapbox Navigation SDK
+    implementation project(':libandroid-navigation-ui')
+    implementation dependenciesList.mapboxMapSdk
+    implementation dependenciesList.locationLayerPlugin
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-auth:16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.firebaseui:firebase-ui-database:4.0.1'
+
+    // GooglePlay services
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.google.android.gms:play-services-places:15.0.1'
+
+    //Volley
+    implementation 'com.android.volley:volley:1.1.0'
+
+    // Support libraries
+    implementation dependenciesList.supportAppcompatV7
+    implementation dependenciesList.supportDesign
+    implementation dependenciesList.supportRecyclerView
+    implementation dependenciesList.supportConstraintLayout
+    implementation dependenciesList.supportCardView
+    implementation dependenciesList.lifecycleExtensions
+
+    implementation dependenciesList.gmsLocation
+
+    // Logging
+    implementation dependenciesList.timber
+
+    // Butter Knife
+    implementation dependenciesList.butterKnife
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    annotationProcessor dependenciesList.butterKnifeProcessor
+
+    // Leak Canary
+    debugImplementation dependenciesList.leakCanaryDebug
+    releaseImplementation dependenciesList.leakCanaryRelease
+    androidTestImplementation dependenciesList.leakCanaryTest
+
+    // Unit Testing
+    testImplementation dependenciesList.junit
+    testImplementation dependenciesList.mockito
+
+    // Instrumentation testing
+    androidTestImplementation(dependenciesList.testEspressoCore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}
+
+apply from: "${rootDir}/gradle/developer-config.gradle"
+apply from: "${rootDir}/gradle/checkstyle.gradle"
+apply plugin: 'com.google.gms.google-services'
